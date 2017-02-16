@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-2-16 10:54:38 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="teacher.clazz.student.Student" table="STUDENT">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+        <property name="height" type="java.lang.Integer">
+            <column name="HEIGHT" />
+        </property>
+        <property name="weight" type="java.lang.Integer">
+            <column name="WEIGHT" />
+        </property>
+        <many-to-one name="clazz" class="teacher.clazz.student.Clazz" fetch="join">
+            <column name="CLAZZ_ID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
